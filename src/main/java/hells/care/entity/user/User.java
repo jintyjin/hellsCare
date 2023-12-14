@@ -2,14 +2,17 @@ package hells.care.entity.user;
 
 import hells.care.entity.base.BaseUserEntity;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
-@Table(name = "USER")
+@Table(name = "USERS")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class User extends BaseUserEntity {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Long id;
 
@@ -19,6 +22,12 @@ public class User extends BaseUserEntity {
     @Column(name = "user_pwd")
     private String password;
 
-    @Column(name = "user_nickname")
+    @Column(name = "user_nickname", unique = true)
     private String nickName;
+
+    public User(String loginId, String password, String nickName) {
+        this.loginId = loginId;
+        this.password = password;
+        this.nickName = nickName;
+    }
 }
