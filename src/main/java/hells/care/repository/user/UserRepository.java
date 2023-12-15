@@ -1,4 +1,4 @@
-package hells.care.repository;
+package hells.care.repository.user;
 
 import hells.care.entity.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;

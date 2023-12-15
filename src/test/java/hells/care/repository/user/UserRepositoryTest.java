@@ -1,18 +1,18 @@
-package hells.care.repository;
+package hells.care.repository.user;
 
 import hells.care.entity.user.User;
-import org.assertj.core.api.Assertions;
+import hells.care.repository.user.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class UserRepositoryTest {
 
-    @Autowired UserRepository userRepository;
+    @Autowired
+    UserRepository userRepository;
 
     @Test
     void 유저_등록() {
@@ -27,6 +27,8 @@ class UserRepositoryTest {
         //then
         assertThat(userCount).isEqualTo(1);
         assertThat(findUser.getId()).isEqualTo(user.getId());
+        System.out.println("가입 시간 = " + user.getRegisterDate());
+        System.out.println("수정 시간 = " + user.getLastLoginDate());
     }
 
     @Test
