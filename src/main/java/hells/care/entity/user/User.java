@@ -6,6 +6,9 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Table(name = "USERS")
@@ -24,6 +27,9 @@ public class User extends BaseUserEntity {
 
     @Column(name = "user_nickname", unique = true)
     private String nickName;
+
+    @OneToMany(mappedBy = "user")
+    private List<Pet> pets = new ArrayList<>();
 
     public User(String loginId, String password, String nickName) {
         this.loginId = loginId;
