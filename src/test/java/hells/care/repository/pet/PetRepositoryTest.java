@@ -6,6 +6,7 @@ import hells.care.repository.user.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -21,6 +22,7 @@ class PetRepositoryTest {
     @Autowired PetRepository petRepository;
 
     @Test
+    @Transactional
     void 펫_등록() {
         //given
         User user1 = new User("test1", "123123", "테스트1");
@@ -44,6 +46,7 @@ class PetRepositoryTest {
     }
 
     @Test
+    @Transactional
     void 펫_가져오기() {
         //given
         User user = new User("test", "123123", "테스트");

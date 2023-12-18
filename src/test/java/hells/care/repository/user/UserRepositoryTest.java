@@ -5,6 +5,7 @@ import hells.care.repository.user.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 
 import static org.assertj.core.api.Assertions.*;
@@ -16,6 +17,7 @@ class UserRepositoryTest {
     UserRepository userRepository;
 
     @Test
+    @Transactional
     void 유저_등록() {
         //given
         User user = new User("test", "123123", "테스트");
@@ -33,6 +35,7 @@ class UserRepositoryTest {
     }
 
     @Test
+    @Transactional
     void 유저_중복_확인() {
         //given
         User user = new User("test", "123123", "테스트");

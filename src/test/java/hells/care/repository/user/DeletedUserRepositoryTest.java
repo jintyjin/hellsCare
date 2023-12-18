@@ -6,6 +6,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -20,6 +21,7 @@ class DeletedUserRepositoryTest {
     @Autowired DeletedUserRepository deletedUserRepository;
 
     @Test
+    @Transactional
     void 유저_탈퇴() {
         //given
         User user = new User("test", "123123", "테스트");
