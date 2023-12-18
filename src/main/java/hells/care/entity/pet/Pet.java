@@ -1,5 +1,6 @@
-package hells.care.entity.user;
+package hells.care.entity.pet;
 
+import hells.care.entity.user.User;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;

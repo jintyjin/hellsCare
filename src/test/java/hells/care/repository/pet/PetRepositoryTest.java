@@ -1,9 +1,8 @@
 package hells.care.repository.pet;
 
-import hells.care.entity.user.Pet;
+import hells.care.entity.pet.Pet;
 import hells.care.entity.user.User;
 import hells.care.repository.user.UserRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,7 +11,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class PetRepositoryTest {

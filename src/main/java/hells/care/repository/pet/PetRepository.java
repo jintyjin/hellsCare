@@ -1,6 +1,6 @@
 package hells.care.repository.pet;
 
-import hells.care.entity.user.Pet;
+import hells.care.entity.pet.Pet;
 import hells.care.entity.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
