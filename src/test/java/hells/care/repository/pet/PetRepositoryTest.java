@@ -41,8 +41,8 @@ class PetRepositoryTest {
         List<Pet> findPetsByUser2 = petRepository.findByUser(user2);
 
         //then
-        assertThat(findPetsByUser1.size()).isEqualTo(1);
-        assertThat(findPetsByUser2.size()).isEqualTo(2);
+        assertThat(findPetsByUser1.size()).isEqualTo(user1.getPets().size());
+        assertThat(findPetsByUser2.size()).isEqualTo(user2.getPets().size());
     }
 
     @Test
